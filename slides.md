@@ -6,9 +6,9 @@ date: 2026-04-15
 
 # The GLOBIOM test service
 
-**Date:** 15th of April 2026
+15 April 2026
 
-**Presenter:** Albert Brouwer
+Albert Brouwer
 
 ---
 

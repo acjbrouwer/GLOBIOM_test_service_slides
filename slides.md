@@ -59,9 +59,38 @@ Hence I created a heavily customized automated test setup capable of handling GL
 
 # History: Jenkins
 
--  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
+-  **2004** — ➡ [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
 -  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
 -  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
+
+---
+
+# History: Jenkins
+
+-  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
+-  **2005** — ➡ Hudson’s first public release ships as an open‑source and quickly gains traction.
+-  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
+
+---
+
+# History: Jenkins
+
+![Jenkins logo](images/jenkins-logo.png)
+
+---
+
+# History: Jenkins
+
+-  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
+-  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
+-  **2010** — ➡ After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
+
+# History: Jenkins
+
+
+| Kohsuke Kawaguchi| Larry Ellison |
+|---------------------|---------------------|
+| ![Alt text 1](path/to/image1.png) | ![Alt text 2](path/to/image2.png) |
 
 ---
 

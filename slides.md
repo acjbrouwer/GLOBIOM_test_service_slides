@@ -54,3 +54,19 @@ Hence I created a heavily customized automated test setup capable of handling GL
 **Jenkins:** a self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
 
 **Kubernetes:** helps coordinate computers to jointly run apps like Jenkins so that they can grow smoothly when needed.
+
+---
+
+# History: Jenkins
+
+-  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
+-  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
+-  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
+
+---
+
+# History: Jenkins
+
+-  **Early 2011** — The community, led by Kawaguchi, **forks Hudson into Jenkins**, rejecting Oracle’s stewardship.
+-  **2011** — Kawaguchi departs and co‑founds **CloudBees**, becoming the commercial steward and evangelist of Jenkins’ future ecosystem.
+-  **2011 onward** — **Jenkins**—the renamed, community‑owned continuation—quickly eclipses Hudson, becoming the dominant CI platform with a vast plugin ecosystem.

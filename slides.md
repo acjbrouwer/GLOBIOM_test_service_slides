@@ -70,3 +70,25 @@ Hence I created a heavily customized automated test setup capable of handling GL
 -  **Early 2011** — The community, led by Kawaguchi, **forks Hudson into Jenkins**, rejecting Oracle’s stewardship.
 -  **2011** — Kawaguchi departs and co‑founds **CloudBees**, becoming the commercial steward and evangelist of Jenkins’ future ecosystem.
 -  **2011 onward** — **Jenkins**—the renamed, community‑owned continuation—quickly eclipses Hudson, becoming the dominant CI platform with a vast plugin ecosystem.
+
+---
+
+# History: CTBTO
+
+Jenkins for automated testing of seismic, hydroacoustic, and infrasound processing software.
+
+- Virtual machine (VM) image with integrated Oracle database.
+- Scaled by deploying more "worker agents" VM instances.
+- "Free style" GUI-configured Jenkins projects.
+- Jenkins sprouted pipelines and configuration as code.
+
+----
+
+# History: IIASA
+
+Let's deploy Jenkins! I'll provide the VM image.
+
+- Thou shallt not install server-side software.
+- Windows... no go.
+- Network storage.
+- Policy to make servers/VNs a shared resource.

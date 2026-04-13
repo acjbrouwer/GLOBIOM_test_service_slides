@@ -54,12 +54,18 @@ Large, data‑heavy GAMS models cannot be tested the way everyday software can b
 ![Ann Ominous](images/Ann_Ominous.jpg)
 
 
-# Jenkins
+# Ann Ominous
+
+![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
+
+
+# Jenkins (sign in demo)
 
 A self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
 
 ![Jenkins](images/jenkins.svg)
 
+The core GLOBIOM team can sign in to the Jenkins GLOBIOM test service at **https://jenkins.iiasa.ac.at**
 
 # History: Jenkins
 
@@ -97,37 +103,36 @@ A self‑hosted test-automation engine prized for its deep configurability. It r
 -  **2011 onward** — **Jenkins**—the renamed, community‑owned continuation—quickly eclipses Hudson, becoming the dominant CI platform with a vast plugin ecosystem.
 
 
-# Jenkins ecosystem
+# Jenkins ecosystem (plugin demo)
 
 The rich Jenkins ecosystem features a **vast plugin library (2,000+ plugins)** that enables flexible, end‑to‑end automation across nearly any technology stack, powered by a large and active open‑source community that continuously expands its capabilities.
 
 ![Jenkins enhanced with plugins](images/jenkins-plugins.png)
 
 
-# History: CTBTO
+# History: CTBTO (project configuration demo)
 
 Jenkins for automated testing of seismic, hydroacoustic, and infrasound processing software.
 
 - Virtual machine (VM) image with integrated Oracle database.
-- Scaled by deploying more "worker agents" VM instances.
+- Scaled by deploying more "worker agent" VM instances.
 - "Free style" GUI-configured Jenkins projects.
-- Jenkins sprouted pipelines and configuration as code.
+
+
+# History: mitigating the GUI monstrosity
+
+- Jenkins sprouted **pipelines** and **configuration as code&&
+
 
 
 # History: IIASA
 
-U
-Omonious challenges:
+Omninous challenges. Set up a **Jenkins test server** using test pipeline scripts. Deployed on Linux via many tickets. The server somewhat worked, but never trouble-free nor able to handle more than 2-3 simultaneous GLOBIOM test runs in parallel. Issuess with:
 
-- Thou shallt not install server-side software.
-- Windows... no go.
-- Network storage.
-- Policy to make servers/VNs a shared resource.
-
-
-# Ann Ominous
-
-![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
+- Getting maintenance and upgrades done.
+- Slow storage
+- Multi tenancy
+- ,,,
 
 
 # Kubernetes

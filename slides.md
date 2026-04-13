@@ -1,7 +1,7 @@
 ---
-title: The GLOBIOM test service
-author: Albert Brouwer
-date: 2026-04-15
+title: "The GLOBIOM test service"
+author: "Albert Brouwer"
+date: "15-Apr-2026"
 ---
 
 # Outline
@@ -39,11 +39,28 @@ Automated testing for everyday software can be simple and light because most fea
 
 ---
 
-# Purpose: automated testing of big GAMS models
+# Purpose: testing big GAMS models
 
 Large, data‑heavy GAMS models cannot be tested the way everyday software can because their behavior depends on running the *entire* system at once. They pull in huge datasets and interact through tightly linked equations, so changing one part affects everything else. You can’t check them in tiny pieces on a laptop—only full, time‑consuming runs reveal whether results still make sense. These models behave like whole ecosystems: only by simulating the complete environment can you see if a change truly works.
 
 **Requires a resource-heavy custom approach.**
+
+---
+
+# Purpose: overcome **resource challenges:**
+
+- Acquiring resources for custom approach
+- Scaling  resources with demand
+- GLOBIOM VCS is on Suberrsion (internal only)
+- GLOBIOM is partially on P: (internal only)
+- Dealing with Ann Ominous
+
+---
+
+# Ann Ominous
+
+
+![Ann Ominous](images/Ann_Ominous.jpg)
 
 ---
 
@@ -54,6 +71,12 @@ Hence I created a heavily customized automated test setup capable of handling GL
 **Jenkins:** a self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
 
 **Kubernetes:** helps coordinate computers to jointly run apps like Jenkins so that they can grow smoothly when needed.
+
+---
+
+# Ann Ominous
+
+![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
 
 ---
 
@@ -75,7 +98,7 @@ Hence I created a heavily customized automated test setup capable of handling GL
 
 # History: Jenkins
 
-![Jenkins logo](images/jenkins-logo.png)
+![Jenkins logo](images/Ann_Ominous.jpg)
 
 ---
 
@@ -88,9 +111,9 @@ Hence I created a heavily customized automated test setup capable of handling GL
 # History: Jenkins
 
 
-| Kohsuke Kawaguchi| Larry Ellison |
-|---------------------|---------------------|
-| ![Alt text 1](path/to/image1.png) | ![Alt text 2](path/to/image2.png) |
+| Sun | Linux | Oraccle   |
+|---------------------|---------------------|---------------------|
+| ![Kohsuke Kawaguchi](Kawaguchi_Sun.jpg) | ![Linux & Sun](Linux_crushes_Sun.jpg) | ![Larry Ellison](images/Ellison_Oracle.jpg) |
 
 ---
 

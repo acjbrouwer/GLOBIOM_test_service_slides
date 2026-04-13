@@ -6,20 +6,16 @@ date: "15-Apr-2026"
 
 # Outline
 
-- Purpose of the GLOBIOM test service
+- Purpose
 - History
 - Function
 - Use
-- Scalability and features: reproducible clean-slate tests, special provisions for GLOBIOM testing
-- Access for GLOBIOM core team members at https://jenkins.iiasa.ac.at
 
----
 
 # Purpose: automated testing
 
 Automated testing is essential in scientific software because it enforces rigor, protects reproducibility, and prevents silent regressions that can corrupt results or invalidate published findings. It guarantees that complex numerical pipelines remain trustworthy as models evolve.
 
----
 
 # Purpose: automated testing of GLOBIOM to:
 
@@ -31,54 +27,39 @@ Automated testing is essential in scientific software because it enforces rigor,
 - Guard cross-platform and containerization compatibility
 - Increase confidence in model results
 
----
 
 # Purpose: automated testing of everyday software
 
 Automated testing for everyday software can be simple and light because most features can be checked in small pieces, one at a time, on a regular laptop. Developers can quickly run these tiny checks while they work, catching mistakes early—long before the software becomes big or complex. This doesn’t require a large testing system or special infrastructure; it’s more like proofreading each paragraph as you write, instead of waiting to review the whole book at the end.
 
----
 
 # Purpose: testing big GAMS models
 
 Large, data‑heavy GAMS models cannot be tested the way everyday software can because their behavior depends on running the *entire* system at once. They pull in huge datasets and interact through tightly linked equations, so changing one part affects everything else. You can’t check them in tiny pieces on a laptop—only full, time‑consuming runs reveal whether results still make sense. These models behave like whole ecosystems: only by simulating the complete environment can you see if a change truly works.
 
-**Requires a resource-heavy custom approach.**
+**⇒ a resource-heavy custom approach is required.**
 
----
 
 # Purpose: overcome **resource challenges:**
 
 - Acquiring resources for custom approach
 - Scaling  resources with demand
-- GLOBIOM VCS is on Suberrsion (internal only)
+- GLOBIOM VCS is on Subversion (internal only)
 - GLOBIOM is partially on P: (internal only)
 - Dealing with Ann Ominous
 
----
 
 # Ann Ominous
-
 
 ![Ann Ominous](images/Ann_Ominous.jpg)
 
----
 
-# Purpose: automated testing with Jenkins deployed on Kubernetes
+# Jenkins
 
-Hence I created a heavily customized automated test setup capable of handling GLOBIOM testing. It is based on Jenkins and Kubernetes.
+A self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
 
-**Jenkins:** a self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
+![Jenkins](images/jenkins.svg)
 
-**Kubernetes:** helps coordinate computers to jointly run apps like Jenkins so that they can grow smoothly when needed.
-
----
-
-# Ann Ominous
-
-![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
-
----
 
 # History: Jenkins
 
@@ -86,7 +67,6 @@ Hence I created a heavily customized automated test setup capable of handling GL
 -  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
 -  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
 
----
 
 # History: Jenkins
 
@@ -94,28 +74,21 @@ Hence I created a heavily customized automated test setup capable of handling GL
 -  **2005** — ➡ Hudson’s first public release ships as an open‑source and quickly gains traction.
 -  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
 
----
-
-# History: Jenkins
-
-![Jenkins logo](images/Ann_Ominous.jpg)
-
----
 
 # History: Jenkins
 
 -  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
 -  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
--  **2010** — ➡ After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
+
+![Linux & Sun](images/Linux_crushes_Sun.jpg){width=30%}
+
 
 # History: Jenkins
 
+-  **2010** — ➡ After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
 
-| Sun | Linux | Oraccle   |
-|---------------------|---------------------|---------------------|
-| ![Kohsuke Kawaguchi](Kawaguchi_Sun.jpg) | ![Linux & Sun](Linux_crushes_Sun.jpg) | ![Larry Ellison](images/Ellison_Oracle.jpg) |
+![Kohsuke Kawaguchi](images/Kawaguchi_Sun.jpg){width=40%}\ [Larry Ellison](images/Ellison_Oracle.jpg){width=40%}
 
----
 
 # History: Jenkins
 
@@ -123,7 +96,13 @@ Hence I created a heavily customized automated test setup capable of handling GL
 -  **2011** — Kawaguchi departs and co‑founds **CloudBees**, becoming the commercial steward and evangelist of Jenkins’ future ecosystem.
 -  **2011 onward** — **Jenkins**—the renamed, community‑owned continuation—quickly eclipses Hudson, becoming the dominant CI platform with a vast plugin ecosystem.
 
----
+
+# Jenkins ecosystem
+
+The rich Jenkins ecosystem features a **vast plugin library (2,000+ plugins)** that enables flexible, end‑to‑end automation across nearly any technology stack, powered by a large and active open‑source community that continuously expands its capabilities.
+
+![Jenkins enhanced with plugins](images/jenkins-plugins.png)
+
 
 # History: CTBTO
 
@@ -134,13 +113,23 @@ Jenkins for automated testing of seismic, hydroacoustic, and infrasound processi
 - "Free style" GUI-configured Jenkins projects.
 - Jenkins sprouted pipelines and configuration as code.
 
-----
 
 # History: IIASA
 
-Let's deploy Jenkins! I'll provide the VM image.
+U
+Omonious challenges:
 
 - Thou shallt not install server-side software.
 - Windows... no go.
 - Network storage.
 - Policy to make servers/VNs a shared resource.
+
+
+# Ann Ominous
+
+![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
+
+
+# Kubernetes
+
+**Kubernetes:** helps coordinate computers to jointly run apps like Jenkins so that they can grow smoothly when needed.

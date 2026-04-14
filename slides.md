@@ -28,7 +28,7 @@ Automated testing is essential in scientific software because it enforces rigor,
 - Increase confidence in model results
 
 
-# Purpose: automated testing of everyday software
+# Automated testing of everyday software
 
 Automated testing for everyday software can be simple and light because most features can be checked in small pieces, one at a time, on a regular laptop. Developers can quickly run these tiny checks while they work, catching mistakes early—long before the software becomes big or complex. This doesn’t require a large testing system or special infrastructure; it’s more like proofreading each paragraph as you write, instead of waiting to review the whole book at the end.
 
@@ -40,10 +40,10 @@ Large, data‑heavy GAMS models cannot be tested the way everyday software can b
 **⇒ a resource-heavy custom approach is required.**
 
 
-# Purpose: overcome **resource challenges:**
+# Purpose: overcome challenges
 
-- Acquiring resources for custom approach
-- Scaling  resources with demand
+- Acquiring resources in a provisionable format.
+- Scaling  resources with demand.
 - GLOBIOM VCS is on Subversion (internal only)
 - GLOBIOM is partially on P: (internal only)
 - Dealing with Ann Ominous
@@ -66,6 +66,7 @@ A self‑hosted test-automation engine prized for its deep configurability. It r
 ![Jenkins](images/jenkins.svg)
 
 The core GLOBIOM team can sign in to the Jenkins GLOBIOM test service at **https://jenkins.iiasa.ac.at**
+
 
 # History: Jenkins
 
@@ -119,22 +120,50 @@ Jenkins for automated testing of seismic, hydroacoustic, and infrasound processi
 - "Free style" GUI-configured Jenkins projects.
 
 
-# History: mitigating the GUI monstrosity
+# History: mitigating the Jenkins GUI monstrosity
 
-- Jenkins sprouted **pipelines** and **configuration as code&&
+- **Pipeline**: scripts for test description.
+- **Configuration as code**: serialize configuration settings as text.
+- To be managed via **Git**.
+  * See https://iiasa.github.io/Data_Stewards/managing-code-and-data.html
 
+![Jenkins enhanced with plugins](images/jenkinstein.svg)
 
 
 # History: IIASA
 
-Omninous challenges. Set up a **Jenkins test server** using test pipeline scripts. Deployed on Linux via many tickets. The server somewhat worked, but never trouble-free nor able to handle more than 2-3 simultaneous GLOBIOM test runs in parallel. Issuess with:
+Ominous challenges. Set up a **Jenkins test server** using test pipeline scripts. Deployed on Linux via many tickets. Issues with:
 
-- Getting maintenance and upgrades done.
-- Slow storage
-- Multi tenancy
-- ,,,
+- By-proxy maintenance and upgrades.
+- Slow storage.
+- Multi-tenancy resource exhaustion.
+- Outages.
+- No scaling.
+- Added a `Jenkinsfile` pipeline script to the GLOBIOM Trunk.
+- Automated testing of GLOBIOM as far as the test server would allow.
 
 
-# Kubernetes
+# History: Kubernetes
 
-**Kubernetes:** helps coordinate computers to jointly run apps like Jenkins so that they can grow smoothly when needed.
+**Kubernetes:** helps coordinate computers to jointly run apps like Jenkins or the Accelerator so that they can grow smoothly when needed. **Let's use Kubernetes!**
+
+Five years later... after three false starts, acquired a usable Kubernetes cluster by sacrificing limpopo 2, 3, and 4.
+
+And then buying more storage.
+
+
+# Now: Jenkins test service deployed on IBF Kubernetes cluster
+
+A mashup of container build scripting, Kubernetes orchestration resources, configuration as code, Jenkins plugins, and `Jenkinsfile` pipeline scripting.
+
+- Instantiates clean-slate **test agents** for every test run.
+  * Container instances with all the GAMS versions, R, and packages that GLOBIOM needs.
+- Pulls GLOBIOM from GitHub/Subversion and P: data from GitLab.
+- Patches GLOBIOM for testing
+- Runs GLOBIOM from A-to-Z.
+  * For all code-path-modifying off-by-one-form-default settings.
+
+
+# GLOBIOM testing (project demo, metrics)
+
+Plus questions and answers.

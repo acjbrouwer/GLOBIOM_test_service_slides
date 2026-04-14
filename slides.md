@@ -8,8 +8,9 @@ date: "15-Apr-2026"
 
 - Purpose
 - History
-- Function
+- Deployment
 - Use
+- Future
 
 
 # Purpose: automated testing
@@ -46,55 +47,66 @@ Large, data‑heavy GAMS models cannot be tested the way everyday software can b
 - Scaling  resources with demand.
 - GLOBIOM VCS is on Subversion (internal only)
 - GLOBIOM is partially on P: (internal only)
+- Making the testing available as a service to the team.
 - Dealing with Ann Ominous
 
 
 # Ann Ominous
 
-![Ann Ominous](images/Ann_Ominous.jpg)
+![](images/Ann_Ominous.jpg)
 
 
-# Ann Ominous
+# Windows Ann Ominous
 
-![Windows Ann Ominous](images/Ann_Ominous_Windows.jpg)
+![](images/Ann_Ominous_Windows.jpg)
 
 
 # Jenkins (sign in demo)
 
 A self‑hosted test-automation engine prized for its deep configurability. It remains broadly adopted—about 28% usage in 2026—especially where there is need for full control of tailored on‑prem test pipelines.
 
-![Jenkins](images/jenkins.svg)
-
 The core GLOBIOM team can sign in to the Jenkins GLOBIOM test service at **https://jenkins.iiasa.ac.at**
 
+---
 
-# History: Jenkins
+![](images/jenkins.svg)
+
+
+# History: Hudson
 
 -  **2004** — ➡ [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
 -  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
--  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
 
 
-# History: Jenkins
+# History: Hudson
 
 -  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
 -  **2005** — ➡ Hudson’s first public release ships as an open‑source and quickly gains traction.
+
+
+# History: Hudson screenshot
+
+![](images/Hudson_Screenshot.png)
+
+
+# Emerging Linux dominance
+
+- **2006-2009** — Linux started to dominate, impacting Sun business model.
+
+---
+
+![](images/Linux_crushes_Sun.jpg){width=33%}
+
+
+# History: Jenkins
+
 -  **2010** — After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
 
+---
 
-# History: Jenkins
+![Kohsuke Kawaguchi](images/Kawaguchi_Sun.jpg){width=24%}
 
--  **2004** — [**Kohsuke Kawaguchi**](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) creates [**Hudson**](https://grokipedia.com/page/Hudson_%28software%29) at **Sun Microsystems** as a Java‑based CI tool to automate builds and spare his team broken integrations.
--  **2005** — Hudson’s first public release ships as an open‑source and quickly gains traction.
-
-![Linux & Sun](images/Linux_crushes_Sun.jpg){width=30%}
-
-
-# History: Jenkins
-
--  **2010** — ➡ After **Oracle acquires Sun**, tensions rise as Oracle asserts control and seeks to trademark the **Hudson** name, triggering governance disputes.
-
-![Kohsuke Kawaguchi](images/Kawaguchi_Sun.jpg){width=40%}\ [Larry Ellison](images/Ellison_Oracle.jpg){width=40%}
+![Larry Ellison](images/Ellison_Oracle.jpg){width=24%}
 
 
 # History: Jenkins
@@ -108,10 +120,12 @@ The core GLOBIOM team can sign in to the Jenkins GLOBIOM test service at **https
 
 The rich Jenkins ecosystem features a **vast plugin library (2,000+ plugins)** that enables flexible, end‑to‑end automation across nearly any technology stack, powered by a large and active open‑source community that continuously expands its capabilities.
 
-![Jenkins enhanced with plugins](images/jenkins-plugins.png)
+---
+
+![](images/jenkins-plugins.png)
 
 
-# History: CTBTO (project configuration demo)
+# History: CTBTO (free-style configuration demo)
 
 Jenkins for automated testing of seismic, hydroacoustic, and infrasound processing software.
 
@@ -120,14 +134,16 @@ Jenkins for automated testing of seismic, hydroacoustic, and infrasound processi
 - "Free style" GUI-configured Jenkins projects.
 
 
-# History: mitigating the Jenkins GUI monstrosity
+# History: mitigating the Jenkins Web-UI monstrosity
 
 - **Pipeline**: scripts for test description.
 - **Configuration as code**: serialize configuration settings as text.
 - To be managed via **Git**.
   * See https://iiasa.github.io/Data_Stewards/managing-code-and-data.html
 
-![Jenkins enhanced with plugins](images/jenkinstein.svg)
+---
+
+![](images/jenkinstein.svg)
 
 
 # History: IIASA
@@ -143,27 +159,68 @@ Ominous challenges. Set up a **Jenkins test server** using test pipeline scripts
 - Automated testing of GLOBIOM as far as the test server would allow.
 
 
+# History: readying GLOBIOM for testing
+
+Readied the GLOBIOM Fable, GLOBIOM Prerelease, and GLOBIOM Trunk for automated testing:
+
+- Removed platform dependencies:
+  * Converted use of GDXXRW/Office to xl2gdx.R/gdxrrw.
+  * Path casing errors.
+  * Path separators.
+  * FILE statement delimiting.
+  * ...
+- Normalized `Model/0_executebatch.gms`, added `include/environment.gms`, ...
+- Mirrored `P:` data GLOBIOM needs on GitLab.
+
+
 # History: Kubernetes
 
 **Kubernetes:** helps coordinate computers to jointly run apps like Jenkins or the Accelerator so that they can grow smoothly when needed. **Let's use Kubernetes!**
 
-Five years later... after three false starts, acquired a usable Kubernetes cluster by sacrificing limpopo 2, 3, and 4.
+Five years later, after several false starts, bartered into being a usable Kubernetes cluster for IBF by sacrificing limpopo 2, 3, and 4. And then buying more storage.
 
-And then buying more storage.
+Also used for Accelerator "routines".
 
 
 # Now: Jenkins test service deployed on IBF Kubernetes cluster
 
-A mashup of container build scripting, Kubernetes orchestration resources, configuration as code, Jenkins plugins, and `Jenkinsfile` pipeline scripting.
+A mashup of container build scripting, Kubernetes orchestration resources, configuration as code, Jenkins plugins, and `Jenkinsfile` pipeline scripting, all managed with Git.
 
 - Instantiates clean-slate **test agents** for every test run.
-  * Container instances with all the GAMS versions, R, and packages that GLOBIOM needs.
 - Pulls GLOBIOM from GitHub/Subversion and P: data from GitLab.
 - Patches GLOBIOM for testing
-- Runs GLOBIOM from A-to-Z.
-  * For all code-path-modifying off-by-one-form-default settings.
+- Runs GLOBIOM from A to Z.
+  * For all code-path-modifying off-by-one-from-default settings.
 
 
-# GLOBIOM testing (project demo, metrics)
+# Agent container
 
-Plus questions and answers.
+- Has all the IBF canonical GAMS versions, R, Python, and packages that GLOBIOM needs.
+- Also instrumented for GAMS post-mortem.
+
+---
+
+![](images/Linux_performance_observability_tools.png)
+
+
+# GLOBIOM testing (demo)
+
+- Views
+- Projects
+- Parameters
+- Pipeline
+- Build
+- Changes
+- Plots/Metrics
+- Emails/Issues
+
+
+# Future
+
+- Expand plots/metrics
+- Add more branches
+- Scale up storage
+- GitHub issue tracking integration
+- Integrate **GAMS dig** analysis
+- More agent kinds or Jenkins instances
+- ...
